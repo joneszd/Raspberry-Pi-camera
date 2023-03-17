@@ -1,0 +1,24 @@
+import picamera
+import zbarlight
+
+with picamera.PiCamera() as camera:
+    # Set the camera resolution
+    camera.resolution = (640, 480)
+    
+    # Capture an image and save it to a file
+    camera.capture('image.jpg')
+    
+    # Open the image file and read its contents
+    with open('image.jpg', 'rb') as image_file:
+        image_data = image_file.read()
+        
+        # Decode any QR codes found in the image
+        codes = zbarlight.scan_codes(['qrcode'], image_data)
+        
+        # Print the decoded QR codes
+        if codes:
+            for code in codes:
+                print('QR code found: {}'.format(code.decode('utf-8')))
+        else:
+            print('No QR codes found.')
+       
