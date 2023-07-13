@@ -1,8 +1,8 @@
 # Raspberry-Pi-camera
-UV QR Code reader for raspberry pi
-The Camera will have 4 components: 
+ QR Code Optical sensor (Raspberry Pi)
+The camera will have 4 components: 
 The Raspberry Pi v.2
 Camera w/ auto-focus
-rugged Case 
-Power suppy
+Case (repurposed 7.62 mm ammunition case. 
+Power supply: 6-volt power over ethernet (PoE).
 
