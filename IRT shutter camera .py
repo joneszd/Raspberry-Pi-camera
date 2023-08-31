@@ -38,11 +38,11 @@ try:
 
             # compare detected QR code data with known codes
             if obj.data.decode("utf-8") in qr_codes:
-                # convert data to feet
+                # convert data to meters
                 door_position = qr_codes.index(obj.data.decode("utf-8"))
                 print("Door position:", door_position)
 
-                # here you would send `door_position` to your control system
+                # here you would send `door_position` to control system
                 # send the door position over TCP
                 try:
                     s.sendall(str(door_position).encode())
